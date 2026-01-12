@@ -1,0 +1,474 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* Navbar */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 10%; background: #fff; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo { font-size: 24px; font-weight: bold; color: #333; }
+.logo span { color: #e74c3c; }
+nav a { margin-left: 40px; text-decoration: none; color: #555; font-weight: 500; font-size: 20; }
+nav a:hover { color: #e74c3c; }
+
+/* Hero & Slideshow */
+.hero {
+    position: relative; height: 85vh; display: flex; align-items: center;
+    justify-content: center; text-align: center; color: white; overflow: hidden;
+}
+.slideshow-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+.slide {
+    position: absolute; width: 100%; height: 100%; background-size: cover;
+    background-position: center; opacity: 0; transition: opacity 1.5s ease-in-out;
+}
+.slide.active { opacity: 1; }
+.hero::after {
+    content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); z-index: -1;
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+/* Stats Bar */
+.stats-bar {
+    display: flex; justify-content: space-around; background: #2c3e50;
+    color: white; padding: 30px 10%; text-align: center;
+}
+.stat-item strong { display: block; font-size: 28px; color: #e74c3c; }
+
+/* Sections */
+.section { padding: 80px 10%; text-align: center; }
+.light { background: #f4f7f6; }
+h2 { margin-bottom: 40px; font-size: 2.5rem; }
+
+/* Grid Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card {
+    background: white; padding: 40px 20px; border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
+}
+.card:hover { transform: translateY(-10px); }
+
+/* Brand Slider Animation */
+.brand-section { padding: 50px 0; background: #fff; overflow: hidden; border-top: 1px solid #ffffff; }
+.brand-section h3 { text-align: center; margin-bottom: 30px; color: #000000; text-transform: uppercase; font-size: 14px; }
+.brand-slider { width: 100%; display: flex; }
+.brand-track {
+    display: flex; width: calc(250px * 10);
+    animation: scroll 20s linear infinite;
+}
+.brand-logo {
+    width: 250px; text-align: center; font-size: 20px; font-weight: bold; color: #eb292963;
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 5)); }
+}
+
+/* Forms & Footer */
+
+footer { padding: 30px; background: #222; color: #777; text-align: center; }
+/* Container for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the main Nav link */
+.dropdown .dropbtn {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* The hidden dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff; /* Change based on your theme */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-top: 3px solid ; /* Optional branding line */
+    border-radius: 4px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+/* Show the menu when hovering over the parent div */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Floating WhatsApp Button Styling */
+.wp {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 60px;
+    left: 40px; /* Positions it on the bottom-left */
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.wp:hover {
+    transform: scale(1.1); /* Subtle grow effect on hover */
+    background-color: #128c7e;
+}
+
+.whatsapp-icon{
+    width: 45px;
+    height: 45px;
+}
+
+/* Container for both buttons */
+.floating-container {
+    position: fixed;
+    bottom: 150px;
+    left: 40px;
+    display: flex;
+    flex-direction: column; /* Stacks them vertically */
+    gap: 15px; /* Space between the two buttons */
+    z-index: 9999;
+}
+
+/* Base style for both buttons */
+.float-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Call Button - Blue */
+.call-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+/* WhatsApp Button - Green */
+.wa-btn {
+    background-color: #25d366;
+}
+
+/* Icon sizing */
+.icon {
+    width: 45px;
+    height: 45px;
+}
+
+/* Hover effect */
+.float-btn:hover {
+    transform: scale(1.1);
+}
+
+.call-btn:hover {
+    background-color: #0056b3;
+}
+
+.wa-btn:hover {
+    background-color: #128c7e;
+}
+
+/* Grid Layout */
+.product-grid {
+    display: flex;            /* CHANGE: Changed from 'grid' to 'flex' */
+    flex-wrap: nowrap;        /* NEW: Prevents cards from jumping to a second line */
+    overflow-x: auto;         /* NEW: Allows scrolling if cards go off-screen */
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width:none;    /* Makes the scrollbar look cleaner */
+}
+/* The Clickable Container */
+.product-card-link {
+    flex: 0 0 300px; /* NEW: Tells the card to stay exactly 300px wide */
+    
+    /* Keep all your other existing code below */
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.product-card-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Content Inside the Card */
+.card-content {
+    padding: 25px;
+    width: 100%;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-content p {
+    margin: 5px 0 15px 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Aesthetic Button Look */
+.view-btn {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--secondary);
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 1. Top Bar Styling */
+.top-info-bar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+}
+
+.top-info-bar .container {
+    display: flex;
+    justify-content: space-between; /* Pushes contact left, social right */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.contact-links a, .social-links a {
+    color: #ddd;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.social-links a {
+    margin-right: 0;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.contact-links a:hover, .social-links a:hover {
+    color: var(--secondary); /* Uses your orange color */
+}
+
+/* 2. Fix the Header Spacing */
+header {
+    background: #fff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 3. Ensure Hero starts after the bars */
+.hero {
+    margin-top: 0; 
+}
+/* Main dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 240px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    padding: 10px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Button links */
+.btn-link {
+    display: block;
+    background: #1e90ff;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background: #0b63c9;
+}
+
+/* Sub dropdown */
+.sub-dropdown {
+    position: relative;
+}
+
+.sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* Show sub dropdown on hover */
+.sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+}
+
+/* Sub dropdown links */
+.sub-dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sub-dropdown-content a:hover {
+    background: #eaeaea;
+}
+.about-section {
+    background-color: #f5f5f5;
+    padding: 70px 20px;
+}
+
+.about-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Text container */
+.about-text-container {
+    flex: 1.2;
+    background: #fff;
+    padding: 35px;
+    border-radius: 8px;
+    border-left: 4px solid #d10000;
+}
+
+/* Heading */
+.about-text-container h2 {
+    color: #d10000;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+/* Scrollable content */
+.about-scroll {
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 10px;
+    color: #222;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Minimal scrollbar */
+.about-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.about-scroll::-webkit-scrollbar-thumb {
+    background: #d10000;
+    border-radius: 10px;
+}
+
+/* Read more button */
+.read-more-btn {
+    margin-top: 20px;
+    background: none;
+    border: 1px solid #d10000;
+    color: #d10000;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #d10000;
+    color: #fff;
+}
+
+/* Image container */
+.about-image-container {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.about-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-wrapper {
+        flex-direction: column;
+    }
+
+    .about-scroll {
+        max-height: 220px;
+ }
+}
