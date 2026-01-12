@@ -472,3 +472,57 @@ header {
         max-height: 220px;
  }
 }
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide nav by default */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* When active */
+    nav.active {
+        display: flex;
+    }
+
+    /* Nav links spacing */
+    nav a {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    /* Disable hover dropdowns on mobile */
+    .dropdown:hover .dropdown-content,
+    .sub-dropdown:hover .sub-dropdown-content {
+        display: none;
+    }
+
+    /* Make dropdowns click-friendly */
+    .dropdown-content,
+    .sub-dropdown-content {
+        position: static;
+        box-shadow: none;
+        padding-left: 15px;
+    }
+}
